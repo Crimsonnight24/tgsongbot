@@ -15,7 +15,7 @@ s2tw = OpenCC('s2tw.json').convert
 
 @Jebot.on_message(filters.private
                    & filters.text
-                   & filters.edited
+                   & ~filters.edited
                    & filters.regex(YTDL_REGEX))
 async def ytdl_with_button(_, message: Message):
     await message.reply_text(
